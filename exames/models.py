@@ -18,13 +18,13 @@ class TiposExames(models.Model):
         return self.nome
     
 class SolicitacaoExame(models.Model):    
-    choice_status = (
+    CHOICE_STATUS = (
         ('E', 'Em análise'),        
         ('F', 'Finalizado')
     )    
     usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)    
     exame = models.ForeignKey(TiposExames, on_delete=models.DO_NOTHING)    
-    status = models.CharField(max_length=2, choices=choice_status)  
+    status = models.CharField(max_length=2, choices=CHOICE_STATUS)  
     # onde sera armazenado o pdf com o resultado do exame que sera salva em uma pasta resultados  
     resultado = models.FileField(upload_to="resultados", null=True, blank=True)# Null e blank definem que n e nesseçario o resultado para salvar este modelo  
     requer_senha = models.BooleanField(default=False)    

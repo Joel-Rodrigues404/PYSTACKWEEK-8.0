@@ -1,0 +1,47 @@
+{% extends "bases/base.html" %}
+
+{% load static %}
+
+{% block 'head' %}
+    <link rel="stylesheet" href="{% static 'exames/css/css.css' %}">
+{% endblock 'head' %}
+
+{% block 'conteudo' %}    
+    <br>    
+    <br>    
+    <div class="container">        
+        <div class="row">            
+            <div class="col-md">                
+                <h3 class="font-destaque">Solicitar exames</h3>                
+                    <form action="" method="POST">                    
+                        <label for="">Selecione os exames para realizar</label>                    
+                        <select class="select form-control bg-select" multiple name="exames">                                                   
+                            <option class="opt" value="">Exame 1</option>                                            
+                        </select>                    
+                        <br>                    
+                        <input  type="submit" class="btn-default tamanho-2"  name="ultimo_nome" value="Solicitar exames">                
+                    </form>            
+            </div>            
+                <div class="col-md-2">
+
+                </div>            
+                <div class="col-md card">                            
+                    <div style="font-size: 20px; font-weight: bold">                                                       
+                        <img src="{% static 'exames/img/check.png' %}">Exame 1
+                        <span class="previa-preco">R$ 30</span>                        
+                    </div>                                                           
+                    <hr style="color: white;">                    
+                    <div>                        
+                        <label>Total: </label>
+                        <label class="previa-preco">R$ 30</label>                    
+                    </div>                    
+                    <br>                    
+                    <h5>Data: 08 de Setembro</h5>                    
+                    <br>                    
+                    <form action="" method="POST">                        
+                        <button class="btn-secundario">Fechar pedido</button>                    
+                    </form>                                              
+                </div>        
+        </div>    
+    </div>
+{% endblock 'conteudo' %}
